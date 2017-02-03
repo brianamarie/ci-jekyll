@@ -8,7 +8,7 @@ rvm:
 # Install
 # If any of the commands in the first four stages of the build lifecycle return a non-zero exit code, the build is broken: 
 # before_install: Not necessary in this example
-install: Not necessary in this example, install is run below
+# install: Not necessary in this example, install is run below
 
 # We could include this before_script if we didn't make our cibuild file executable locally
 # before_script:
