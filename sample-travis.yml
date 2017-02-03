@@ -2,15 +2,23 @@ language: ruby
 rvm:
   - 2.2
   - jruby
-apt addons:
-cache components:
+apt addons: # optional
+cache components: # optional
+
+# Install
+# If any of the commands in the first four stages of the build lifecycle return a non-zero exit code, the build is broken: 
 before_install:
 install:
 before_script:
 script:
-before_cache:
+
+# These steps will not break the build, unless one of the stages times out.
 after_success:
 after_failure:
+
+# Deployment
+# We won't cover deployment here, but we'll focus on testing in the above steps. 
+# If you would like to deploy using Travis, you could do so with these stages. 
 before_deploy:
 deploy:
 after_deploy:
