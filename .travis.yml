@@ -1,0 +1,35 @@
+language: ruby
+rvm:
+  - 2.3.3
+  
+# apt addons: # optional
+# cache components: # optional
+
+# Install
+# If any of the commands in the first four stages of the build lifecycle return a non-zero exit code, the build is broken: 
+# before_install: Not necessary in this example
+install: Not necessary in this example, install is run below
+
+# We could include this before_script if we didn't make our cibuild file executable locally
+# before_script:
+  # - chmod +x ./script/cibuild
+  
+script: ./script/cibuild
+
+# These steps will not break the build, unless one of the stages times out.
+# after_success: Not necessary in this example
+# after_failure: Not necessary in this example
+
+# Deployment
+# We won't cover deployment here, but we'll focus on testing in the above steps. 
+# If you would like to deploy using Travis, you could do so with these stages. 
+# before_deploy: Not necessary in this example
+# deploy: Not necessary in this example
+# after_deploy: Not necessary in this example
+# after_script: Not necessary in this example
+
+env: 
+  global:
+  - NOKOGIRL_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
+
+sudo: false # route your build to the container-based infrastructure for a faster build
