@@ -8,4 +8,4 @@ dependencies:
 
 test:
   post:
-    - bundle exec htmlproofer ./_site --allow-hash-href --check-html --disable-external
+    - script/cibuild
